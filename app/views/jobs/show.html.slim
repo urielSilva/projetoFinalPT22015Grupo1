@@ -1,0 +1,9 @@
+p#notice = notice
+
+p
+  strong Job name:
+  = @job.job_name
+
+= link_to 'Edit', edit_job_path(@job)
+'|
+= link_to 'Back', jobs_path
