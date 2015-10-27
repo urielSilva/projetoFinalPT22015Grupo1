@@ -1,0 +1,23 @@
+h1 Listing knowledge_levels
+
+table
+  thead
+    tr
+      th Description
+      th Level
+      th
+      th
+      th
+
+  tbody
+    - @knowledge_levels.each do |knowledge_level|
+      tr
+        td = knowledge_level.description
+        td = knowledge_level.level
+        td = link_to 'Show', knowledge_level
+        td = link_to 'Edit', edit_knowledge_level_path(knowledge_level)
+        td = link_to 'Destroy', knowledge_level, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Knowledge level', new_knowledge_level_path
