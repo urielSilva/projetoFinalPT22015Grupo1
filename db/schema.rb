@@ -16,12 +16,14 @@ ActiveRecord::Schema.define(version: 20151026162928) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "roles", force: :cascade do |t|
-    t.string   "Nome"
-        t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   create_table "jobs", force: :cascade do |t|
     t.string   "job_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "roles", force: :cascade do |t|
+    t.string   "Nome"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
