@@ -16,13 +16,11 @@ ActiveRecord::Schema.define(version: 20151027101312) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-
   create_table "activity_types", force: :cascade do |t|
     t.string   "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
-
 
   create_table "jobs", force: :cascade do |t|
     t.string   "job_name"
