@@ -1,0 +1,2 @@
+module KnowledgeLevelsHelper
+end

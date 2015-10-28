@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :sectors
+  resources :knowledge_levels
   resources :activity_types
   resources :roles
   resources :jobs
