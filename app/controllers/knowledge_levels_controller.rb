@@ -4,7 +4,7 @@ class KnowledgeLevelsController < ApplicationController
   # GET /knowledge_levels
   # GET /knowledge_levels.json
   def index
-    @knowledge_levels = KnowledgeLevel.where("id < ?", 3)
+    @knowledge_levels = KnowledgeLevel.all
 
   end
 
