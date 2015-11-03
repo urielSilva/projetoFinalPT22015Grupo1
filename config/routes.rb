@@ -7,6 +7,9 @@ Rails.application.routes.draw do
 
 
   get 'show_level/:id' => 'knowledge_levels#show', as: 'show_level'
+  get 'sitebonito' => 'activity_types#index'
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

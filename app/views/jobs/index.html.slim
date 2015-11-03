@@ -1,21 +1,26 @@
-h1 Listing jobs
+div#all
+  h1.titulo Listing jobs
 
-table
-  thead
-    tr
-      th Job name
-      th
-      th
-      th
+  - if @jobs.size == 0
+    p nenhum registro encontrado
 
-  tbody
-    - @jobs.each do |job|
-      tr
-        td = job.job_name
-        td = link_to 'Show', job
-        td = link_to 'Edit', edit_job_path(job)
-        td = link_to 'Destroy', job, data: {:confirm => 'Are you sure?'}, :method => :delete
+  - else 
+    table.tabelajobs
+      thead
+        tr
+          th Job name
+          th
+          th
+          th
 
-br
+      tbody
+        - @jobs.each do |job|
+          tr
+            td = link_to job.job_name, edit_job_path(job)
+            td#botao = link_to 'Show', job
+            td#botao = link_to 'Destroy', job, data: {:confirm => 'Are you sure?'}, :method => :delete
 
-= link_to 'New Job', new_job_path
+  br
+
+  = link_to 'New Job', new_job_path
+  
