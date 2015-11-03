@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :jobs
 
 
+
   get 'show_level/:id' => 'knowledge_levels#show', as: 'show_level'
   get 'sitebonito' => 'activity_types#index'
 
