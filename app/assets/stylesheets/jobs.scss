@@ -29,6 +29,28 @@
 	position: absolute;
 }
 */
+
+#all{
+	font-family: 'Century Gothic', Arial, Helvetica, sans-serif;
+	background-color: #CDCCFD;
+	width: 100%;
+	position: absolute;
+	min-height:100%;
+	margin: -8px;
+}
+
+#content{
+	margin: auto;
+	margin-top: 9%;
+	width: 60%;
+	border: 3px solid #73AD21;
+	border-radius: 10px;
+	padding: 15px;
+	background-color: white;
+	box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12)
+}
+
+
 #botao{
 	/*height: 20px;
 	width: 20px;
@@ -74,36 +96,6 @@
 	top: 0;
 	padding: 5px;
 	position: absolute;
-}
- 
-.botao:after{
- background: rgba(255, 255, 255, .4);
- border-radius: 2px;
- content: "";
- bottom: 15px;
- left: 0px;
- right: 0px;
- top: 0px;
- position: absolute;
-}
-
-.botao:active{
-    box-shadow: inset 0 0 7px rgba(0, 0, 0, .2);
-    top: 4px;
-}
-
-.botao:active:before{
-     border: none;
-     box-shadow:none;
-}
-
-
-body{
-	margin: 0;
-}
-
-#all{
-	font-family: 'Century Gothic', Arial, Helvetica, sans-serif;
 }
 
 #nav_bar{
