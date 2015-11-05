@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   resources :sectors
   resources :knowledge_levels
   resources :activity_types
