@@ -1,6 +1,6 @@
 div#all
   div#nav_bar
-    h1 CJR - Sistema de usuários 
+    h1 CJR - Sistema de Acompanhamento de Projetos 
   div#content
     h1 Cargos
     hr
@@ -25,4 +25,4 @@ div#all
               td = link_to 'Destroy', job, data: {:confirm => 'Are you sure?'}, :method => :delete
     hr
     br
-    = link_to 'Criar novo cargo', new_job_path
+    div#small_button = link_to 'Criar novo cargo', new_job_path

@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :activity_types
   resources :roles
   resources :jobs
+  resources :technology
 
   get 'mostrar_job/:id' => 'jobs#show'
 
