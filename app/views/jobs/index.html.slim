@@ -1,6 +1,8 @@
 div#all
+  div#nav_bar
+    h1 CJR - Sistema de usuários 
   div#content
-    h1 Listing jobs
+    h1 Cargos
     hr
 
     - if @jobs.size == 0
@@ -10,7 +12,7 @@ div#all
       table.tabelajobs
         thead
           tr
-            th Job name
+            th Nome do Cargo
             th
             th
             th
@@ -21,7 +23,6 @@ div#all
               td = link_to job.job_name, edit_job_path(job)
               td = link_to 'Show', job
               td = link_to 'Destroy', job, data: {:confirm => 'Are you sure?'}, :method => :delete
+    hr
     br
-
-    = link_to 'New Job', new_job_path
-  
+    = link_to 'Criar novo cargo', new_job_path
