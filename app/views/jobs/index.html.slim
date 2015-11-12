@@ -1,28 +1,47 @@
-div#all
-  div#nav_bar
-    h1 CJR - Sistema de usuários 
-  div#content
-    h1 Cargos
-    hr
+div.container
+  
+  nav
+    div.nav-wrapper
+      a.brand-logo href="#!" CJR(Logo) 
 
-    - if @jobs.size == 0
-      p nenhum registro encontrado
+      ul#nav-mobile.right.hide-on-med-and-down 
+        li
+          a href="#!" Reservado 1
+        li
+          a href="#!" Reservado 2
+        li
+          a href="#!" Reservado 3
 
-    - else 
-      table.tabelajobs
-        thead
-          tr
-            th Nome do Cargo
-            th
-            th
-            th
+  div.row
+    div.s12
+      div
+        h1 Cargos
+        hr
 
-        tbody
-          - @jobs.each do |job|
-            tr
-              td = link_to job.job_name, edit_job_path(job)
-              td = link_to 'Show', job
-              td = link_to 'Destroy', job, data: {:confirm => 'Are you sure?'}, :method => :delete
-    hr
-    br
-    = link_to 'Criar novo cargo', new_job_path
+        - if @jobs.size == 0
+          p nenhum registro encontrado
+
+        - else 
+          table.bordered.responsive-table
+            thead
+              tr
+                th Nome do Cargo
+                th
+                th
+                th
+
+            tbody
+              - @jobs.each do |job|
+                tr
+                  td = link_to job.job_name, edit_job_path(job)
+                  td = link_to 'Show', job
+                  td = link_to 'Destroy', job, data: {:confirm => 'Are you sure?'}, :method => :delete
+      br
+      
+      div
+        = link_to 'Criar novo cargo', new_job_path, :class => "waves-effect green btn-large"
+
+  /footer.page-footer
+   / div.container
+    /  div.row
+     /   div.col.16.s12

@@ -5,9 +5,15 @@ Rails.application.routes.draw do
   resources :activity_types
   resources :roles
   resources :jobs
+  resources :technology
+  resources :activities
+  resources :projects
+  resources :project_status
 
-  get 'mostrar_job/:id' => 'jobs#show'
-  get 'projects' => 'projects#index'
+
+
+
+  get 'atividades/:id' => 'activities#show'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
