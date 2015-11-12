@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  description: MyString
+  knowledge_level_id: 
+
+two:
+  description: MyString
+  knowledge_level_id: 

@@ -1,0 +1,13 @@
+.knowledges_path
+	p#notice = notice
+
+	p
+		strong Description:
+		= @knowledge.description
+	p
+		strong Knowledge Level:
+		= @knowledge.knowledge_level.level
+
+	= link_to 'Editar', edit_knowledge_path(@knowledge)
+	'|
+	= link_to 'Voltar', knowledges_path
