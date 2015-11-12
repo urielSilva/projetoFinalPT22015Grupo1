@@ -1,10 +1,10 @@
+p#notice = notice
+
 .activity_types
   h1 Tipos de Atividade
 
-  body background="http://enbeeone3.com/wp-content/uploads/2012/12/lines.png"
-
   - if @activity_types.size == 0
-          .p Não existem atividades
+          .p Não existem tipos de atividades
 
   table
     thead
@@ -15,7 +15,7 @@
         th
 
 
-    tbody.fundo_branco
+    tbody.fundo_cinza
       - @activity_types.each do |activity_type|
         tr
           td = link_to activity_type.description, edit_activity_type_path(activity_type)

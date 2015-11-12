@@ -1,0 +1,25 @@
+p#notice = notice
+
+.activities
+  h1 Atividade
+
+  - if @activities.size == 0
+    .p Não existem atividades
+
+  table
+    thead
+      tr
+        th Descrição
+        th
+        th
+        th
+
+    tbody
+      - @activities.each do |activity|
+        tr
+          td = link_to activity.description, edit_activity_path(activity)
+          td = link_to 'Mostrar', activity
+          td = link_to 'Destruir', activity, data: {:confirm => 'Tem certeza?' }, :method => :delete
+  br
+
+  = link_to 'Nova atividade', new_activity_path
