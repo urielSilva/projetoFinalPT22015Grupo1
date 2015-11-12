@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :jobs
 
   get 'mostrar_job/:id' => 'jobs#show'
+  get 'projects' => 'projects#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
