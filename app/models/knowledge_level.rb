@@ -1,5 +1,4 @@
 class KnowledgeLevel < ActiveRecord::Base
 
-	has_many :technologies
-
+	has_many :knowledges, dependent: :destroy
 end

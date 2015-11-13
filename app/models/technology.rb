@@ -1,5 +1,5 @@
 class Technology < ActiveRecord::Base
 
-	belongs_to :knowledge_levels
+	has_many :knowledge_levels
 
 end
