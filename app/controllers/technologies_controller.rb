@@ -26,7 +26,7 @@ class TechnologiesController < ApplicationController
 	# POST /jobs
 	# POST /jobs.json
 	def create
-		@techonology = Technology.new(technology_params)
+		@technology = Technology.new(technology_params)
 
 		respond_to do |format|
 			if @technology.save

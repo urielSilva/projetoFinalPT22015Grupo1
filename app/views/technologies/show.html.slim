@@ -1,0 +1,9 @@
+p#notice = notice
+
+p
+	strong Technology name:
+	= @technology.technology_name
+
+= link_to 'Edit', edit_techonology_path(@technology)
+'|
+= link_to 'Back', technologies_path
