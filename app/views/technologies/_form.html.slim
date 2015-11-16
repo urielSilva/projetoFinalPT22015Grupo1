@@ -1,0 +1,17 @@
+= form_for @technology do |f|
+	- if @technology.errors.any?
+		#error_explanation
+			h2 = "#{pluralize(@technology.errors.count, "error")} prohibited this technology from being saved:"
+			ul
+				- @technology.errors.full_messages.each do |message|
+					li = message
+
+	.field
+		= f.label :name
+		= f.text_field :name
+	
+	.field
+		= f.label :description
+		= f.text_field :description
+	
+	.actions = f.submit
