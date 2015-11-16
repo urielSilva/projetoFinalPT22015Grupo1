@@ -41,9 +41,21 @@ ActiveRecord::Schema.define(version: 20151105172218) do
   create_table "knowledge_levels", force: :cascade do |t|
     t.string   "description"
     t.string   "level"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.integer  "knowledge_id"
   end
+
+  add_index "knowledge_levels", ["knowledge_id"], name: "index_knowledge_levels_on_knowledge_id", using: :btree
+
+  create_table "knowledges", force: :cascade do |t|
+    t.string   "description"
+    t.integer  "knowledge_level_id"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+  end
+
+  add_index "knowledges", ["knowledge_level_id"], name: "index_knowledges_on_knowledge_level_id", using: :btree
 
   create_table "roles", force: :cascade do |t|
     t.string   "Nome"
@@ -89,6 +101,8 @@ ActiveRecord::Schema.define(version: 20151105172218) do
   add_index "users", ["role_id"], name: "index_users_on_role_id", using: :btree
 
   add_foreign_key "activities", "activity_types"
+  add_foreign_key "knowledge_levels", "knowledges"
+  add_foreign_key "knowledges", "knowledge_levels"
   add_foreign_key "users", "jobs"
   add_foreign_key "users", "roles"
 end
