@@ -1,5 +1,5 @@
 class TechnologiesController < ApplicationController
-	before_action :set_job, only: [:show, :edit, :update, :destroy]
+	before_action :set_technology, only: [:show, :edit, :update, :destroy]
 	
 	# GET /jobs
 	# GET /jobs.json
@@ -66,7 +66,7 @@ class TechnologiesController < ApplicationController
 	private
 		# Use callbacks to share common setup or constraints between actions.
 		def set_technology
-			@techonology = Technology.find(params[:id])
+			@technology = Technology.find(params[:id])
 		end
 
 		# Never trust parameters from the scary internet, only allow the white list through.
