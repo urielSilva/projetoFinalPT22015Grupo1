@@ -1,3 +1,3 @@
 class Technology < ActiveRecord::Base
-	has_many :knowledges, dependent: :destroy
+	has_many :knowledges
 end
