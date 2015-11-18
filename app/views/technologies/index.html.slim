@@ -12,7 +12,7 @@ table
 		tbody
 			- @technologies.each do |technology|
 				tr
-					td = link_to technology.technology_name, edit_technology_path(technology)
+					td = link_to technology.name, edit_technology_path(technology)
 					td = link_to 'Show', technology
 					td = link_to 'Destroy', technology, data: {:confirm =>  'Are you sure?'}, :method => :delete	
 		br
