@@ -1,0 +1,12 @@
+= form_for @project_status do |f|
+  - if @project_status.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@project_status.errors.count, "error")} prohibited this job from being saved:"
+      ul
+        - @project_status.errors.full_messages.each do |message|
+          li = message
+
+  .field
+    = f.label :project_status_status
+    = f.text_field :project_status_status
+  .actions = f.submit

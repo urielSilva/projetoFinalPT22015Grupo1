@@ -1,5 +1,5 @@
 class ProjectStatusController < ApplicationController
-	before_action :set_project, only: [:show, :edit, :update, :destroy]
+	before_action :set_project_status, only: [:show, :edit, :update, :destroy]
 
 	def index
 		@project_statuses = ProjectStatus.all
@@ -44,7 +44,7 @@ class ProjectStatusController < ApplicationController
 	def destroy
 		@project_status.destroy
 		respond_to do |format|
-			format.html { redirect_to_project_statuses_url, notice: 'Project Status was successfully destroyed'}
+			format.html { redirect_to_project_status_url, notice: 'Project Status was successfully destroyed'}
 			format.json { head :no_content}
 		end
 	end
@@ -56,6 +56,6 @@ class ProjectStatusController < ApplicationController
 	end
 
 	def project_status_params
-		params.require(:project_status).permit(:Nome)
+		params.require(:project_status).permit(:status)
 	end
 end
