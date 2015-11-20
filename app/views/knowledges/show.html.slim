@@ -2,11 +2,14 @@
 	p#notice = notice
 
 	p
-		strong Description:
+		strong Descrição:
 		= @knowledge.description
 	p
-		strong Knowledge Level:
+		strong Nível de Conhecimento:
 		= @knowledge.knowledge_level.level
+	p
+		strong Tecnologia:
+		= @knowledge.technology.name
 
 	= link_to 'Editar', edit_knowledge_path(@knowledge)
 	'|

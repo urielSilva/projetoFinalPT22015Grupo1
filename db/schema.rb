@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151105172218) do
+ActiveRecord::Schema.define(version: 20151120175512) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -53,9 +53,11 @@ ActiveRecord::Schema.define(version: 20151105172218) do
     t.integer  "knowledge_level_id"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
+    t.integer  "technology_id"
   end
 
   add_index "knowledges", ["knowledge_level_id"], name: "index_knowledges_on_knowledge_level_id", using: :btree
+  add_index "knowledges", ["technology_id"], name: "index_knowledges_on_technology_id", using: :btree
 
   create_table "roles", force: :cascade do |t|
     t.string   "Nome"
@@ -103,6 +105,7 @@ ActiveRecord::Schema.define(version: 20151105172218) do
   add_foreign_key "activities", "activity_types"
   add_foreign_key "knowledge_levels", "knowledges"
   add_foreign_key "knowledges", "knowledge_levels"
+  add_foreign_key "knowledges", "technologies"
   add_foreign_key "users", "jobs"
   add_foreign_key "users", "roles"
 end

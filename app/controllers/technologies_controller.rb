@@ -5,7 +5,7 @@ class TechnologiesController < ApplicationController
 	# GET /jobs.json
 
 	def index
-		@technologies = Technology.all
+		@technologies = Technology.includes(:knowledges).all
 	end
 
 	# GET /jobs/1

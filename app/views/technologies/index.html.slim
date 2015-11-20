@@ -17,7 +17,7 @@ h1 Tecnologias
 				tr
 					td = link_to technology.name, edit_technology_path(technology)
 					td = technology.description
-					td = link_to 'Show', technology
-					td = link_to 'Destroy', technology, data: {:confirm =>  'Are you sure?'}, :method => :delete	
-		br
-			= link_to 'Criar nova tecnologia', new_technology_path, :class => "waves-effect green btn-large"
+					td = link_to 'Mostrar', technology
+					td = link_to 'Destruir', technology, data: {:confirm =>  'Tem certeza?'}, :method => :delete	
+br
+	= link_to 'Criar nova tecnologia', new_technology_path, :class => "waves-effect green btn-large"
