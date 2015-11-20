@@ -1,3 +1,29 @@
-// Place all the styles related to the ActivityTypes controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.activity_types {
+        background-color: #ddd;
+    body {
+        font-family: arial;
+        font-size: 15px;
+        font-weight: 10px;
+        line-height: 15px;
+    }
+
+    h1 {
+        color: #333;
+        font-size: 50px;
+        text-align: center;
+    }
+
+    thead {
+        font-size: 20px;
+        line-height: 20px;
+    }
+
+    tbody {
+        font-size: 15px;
+        line-height: 20px;
+    }
+
+    .fundo_cinza {
+        background-color: #ddd;
+    }
+}

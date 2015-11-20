@@ -4,8 +4,7 @@ class KnowledgeLevelsController < ApplicationController
   # GET /knowledge_levels
   # GET /knowledge_levels.json
   def index
-    @knowledge_levels = KnowledgeLevel.all
-
+    @knowledge_levels = KnowledgeLevel.includes(:knowledges).all
   end
 
   # GET /knowledge_levels/1
@@ -16,6 +15,7 @@ class KnowledgeLevelsController < ApplicationController
   # GET /knowledge_levels/new
   def new
     @knowledge_level = KnowledgeLevel.new
+
   end
 
   # GET /knowledge_levels/1/edit
@@ -26,7 +26,7 @@ class KnowledgeLevelsController < ApplicationController
   # POST /knowledge_levels.json
   def create
     @knowledge_level = KnowledgeLevel.new(knowledge_level_params)
-
+    
     respond_to do |format|
       if @knowledge_level.save
         format.html { redirect_to @knowledge_level, notice: 'Knowledge level was successfully created.' }

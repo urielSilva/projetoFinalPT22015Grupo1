@@ -1,21 +1,48 @@
-h1 Listing jobs
+div.container
+  
+  nav
+    div.nav-wrapper.hoverable
+      a.brand-logo href="#!" 
+        = image_tag("cjr.png", height: '60')
 
-table
-  thead
-    tr
-      th Job name
-      th
-      th
-      th
+      ul#nav-mobile.right.hide-on-med-and-down 
+        li
+          a href="#!" Reservado 1
+        li
+          a href="#!" Reservado 2
+        li
+          a href="#!" Reservado 3
 
-  tbody
-    - @jobs.each do |job|
-      tr
-        td = job.job_name
-        td = link_to 'Show', job
-        td = link_to 'Edit', edit_job_path(job)
-        td = link_to 'Destroy', job, data: {:confirm => 'Are you sure?'}, :method => :delete
+  div.row
+    div.s12
+      div
+        h1 Cargos
+        hr
 
-br
+        - if @jobs.size == 0
+          p nenhum registro encontrado
 
-= link_to 'New Job', new_job_path
+        - else 
+          table.bordered.responsive-table
+            thead
+              tr
+                th Nome do Cargo
+                th
+                th
+                th
+
+            tbody
+              - @jobs.each do |job|
+                tr
+                  td = link_to job.job_name, edit_job_path(job)
+                  td = link_to 'Show', job
+                  td = link_to 'Destroy', job, data: {:confirm => 'Are you sure?'}, :method => :delete
+      br
+      
+      div
+        = link_to 'Criar novo cargo', new_job_path, :class => "waves-effect green btn-large"
+
+  /footer.page-footer
+   / div.container
+    /  div.row
+     /   div.col.16.s12

@@ -1,12 +1,22 @@
 Rails.application.routes.draw do
+  devise_for :users
   resources :sectors
   resources :knowledge_levels
+  resources :knowledges
   resources :activity_types
   resources :roles
   resources :jobs
+
   resources :areas
 
   get 'nucleos/:id' => 'sectors#show'
+
+  resources :technologies
+  resources :activities
+
+
+  get 'atividades/:id' => 'activities#show'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

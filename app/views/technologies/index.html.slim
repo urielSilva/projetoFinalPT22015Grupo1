@@ -1,0 +1,19 @@
+h1 Tecnologias
+hr
+
+table
+	thead
+		tr
+			th Nome da tecnologia
+			th
+			th
+			th
+
+		tbody
+			- @technologies.each do |technology|
+				tr
+					td = link_to technology.technology_name, edit_technology_path(technology)
+					td = link_to 'Show', technology
+					td = link_to 'Destroy', technology, data: {:confirm =>  'Are you sure?'}, :method => :delete	
+		br
+		= link_to 'Criar nova tecnologia', new_technology_path, :class => "waves-effect green btn-large"

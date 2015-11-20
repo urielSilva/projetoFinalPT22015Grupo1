@@ -1,0 +1,12 @@
+= form_for @activity do |f|
+  - if @activity.errors.any?
+    #error_explanation
+      h4 = "#{pluralize(@activity.errors.count, "erro")} impediu essa atividade de ser salva:"
+      ul
+        - @activity.errors.full_messages.each do |message|
+          li = message
+
+  .field
+    = f.label :description
+    = f.text_field :description
+  .actions = f.submit

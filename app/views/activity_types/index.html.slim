@@ -1,21 +1,27 @@
-h1 Listing activity_types
+p#notice = notice
 
-table
-  thead
-    tr
-      th Description
-      th
-      th
-      th
+.activity_types
+  h1 Tipos de Atividade
 
-  tbody
-    - @activity_types.each do |activity_type|
+  - if @activity_types.size == 0
+          .p Não existem tipos de atividades
+
+  table
+    thead
       tr
-        td = activity_type.description
-        td = link_to 'Show', activity_type
-        td = link_to 'Edit', edit_activity_type_path(activity_type)
-        td = link_to 'Destroy', activity_type, data: {:confirm => 'Are you sure?'}, :method => :delete
+        th Descrição
+        th
+        th
+        th
 
-br
 
-= link_to 'New Activity type', new_activity_type_path
+    tbody.fundo_cinza
+      - @activity_types.each do |activity_type|
+        tr
+          td = link_to activity_type.description, edit_activity_type_path(activity_type)
+          td = link_to 'Mostrar', activity_type
+          td = link_to 'Destruir', activity_type, data: {:confirm => 'Tem certeza?'}, :method => :delete
+
+  br
+
+  = link_to 'Novo tipo de atividade', new_activity_type_path

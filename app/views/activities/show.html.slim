@@ -1,0 +1,9 @@
+p#notice = notice
+
+p
+  strong Descrição:
+  = @activity.description
+
+= link_to 'Editar', edit_activity_path(@activity)
+'|
+= link_to 'Voltar', activities_path

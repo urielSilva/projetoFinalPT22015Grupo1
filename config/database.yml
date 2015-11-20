@@ -20,9 +20,13 @@ default: &default
   # For details on connection pooling, see rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: 5
-  host: localhost
+  host: localhost 
   user: postgres 	   
   password: postgres
+
+  user: lmafra
+  password: 123456 
+  port: 5432
 
 development:
   <<: *default

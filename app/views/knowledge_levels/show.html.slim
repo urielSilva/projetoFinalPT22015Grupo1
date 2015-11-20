@@ -1,12 +1,13 @@
-p#notice = notice
+.knowledge_levels_path
+	p#notice = notice
 
-p
-  strong Description:
-  = @knowledge_level.description
-p
-  strong Level:
-  = @knowledge_level.level
+	p
+	  strong Description:
+	  = @knowledge_level.description
+	p
+	  strong Level:
+	  = @knowledge_level.level
 
-= link_to 'Edit', edit_knowledge_level_path(@knowledge_level)
-'|
-= link_to 'Back', knowledge_levels_path
+	= link_to 'Edit', edit_knowledge_level_path(@knowledge_level)
+	'|
+	= link_to 'Back', knowledge_levels_path
