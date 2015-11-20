@@ -24,8 +24,8 @@ default: &default
   user: postgres 	   
   password: postgres
 
-  user: lmafra
-  password: 123456 
+  user: postgres
+  password: postgres 
   port: 5432
 
 development:

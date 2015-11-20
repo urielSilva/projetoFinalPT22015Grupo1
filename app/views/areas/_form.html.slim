@@ -12,5 +12,7 @@
     .field
       = f.label :sector
       =collection_select(:area, :sector_id, Sector.all,:id,:name, prompt: true)
+    javascript:
+      $('select').material_select()
      
     .actions = f.submit 'Save'
