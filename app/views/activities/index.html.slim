@@ -11,6 +11,7 @@ p#notice = notice
       tr
         th Descrição
         th Créditos
+        th Tipo de Atividade
         th
         th
 
@@ -19,6 +20,7 @@ p#notice = notice
         tr
           td = link_to activity.description, edit_activity_path(activity)
           td = activity.credit
+          td = activity.activity_type.description
           td = link_to 'Mostrar', activity
           td = link_to 'Destruir', activity, data: {:confirm => 'Tem certeza?' }, :method => :delete
   br
