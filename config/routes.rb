@@ -4,6 +4,9 @@ Rails.application.routes.draw do
   resources :activity_types
   resources :roles
   resources :jobs
+  resources :areas
+
+  get 'nucleos/:id' => 'sectors#show'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

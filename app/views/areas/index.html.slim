@@ -1,0 +1,26 @@
+#areas
+  h1 Areas
+  -if @areas.size == 0
+    p Nenhum elemento na lista
+  -else
+    table
+      thead
+        tr
+          th Name
+          th Sector
+          th 
+          th
+          th
+          th
+
+      tbody
+        - @areas.each do |area|
+          tr
+            td = link_to area.name, edit_area_path(area)
+            td = link_to area.sector.name, edit_area_path(area)
+            td = link_to 'Show', area
+            td = link_to 'Destroy', area, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+    br
+#newArea
+  = link_to 'New Area', new_area_path
