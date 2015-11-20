@@ -1,21 +1,55 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>SAP</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+	
+	<head>
+		<title>SAP</title>
+		<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+		<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+		<%= csrf_meta_tags %>
+	</head>
+	
+	<body>
+<!--
+		<nav class="blue navbar-text pull-right">
+		  <div class="nav-wrapper hoverable">
+		  	<a class="brand-logo" href="#!">
+		  		<%= image_tag("cjr.png", height: '60') %>
+		  	</a>
+		  		Sistema de Acompanhamento de Projetos (beta hihi)
 
-<% if notice %>
-	<p class="alert alert-sucess"><%= notice %></p>
-<% end %>
-<% if alert %>
-	<p class="alert alert-danger"><%= alert %></p>
-<% end %>
+		  	<ul id="nav-mobile" class="right hide-on-med-and-down">
+		  		<li>
+		  			<a href="!#"> Reservado 1 </a>
+		  			<a href="!#"> Reservado 2 </a>
+		  			<a href="!#"> Reservado 3 </a>
+		  		</li>
+		  	 </ul>
+		</nav>
+-->
 
-<%= yield %>
+		<nav class="blue">
+  			<li class="active">CJR</li>
+		</nav>
 
-</body>
+		<p class="navbar-text pull-right">
+		<% if user_signed_in? %>
+			Logged in as <strong><%= current_user.email %></strong>.
+			<%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %>
+			<%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link' %>
+		<% else %>
+			<% link_to "Sign up", new_user_registration_path, :class => 'navbar-link' %>
+			<% link_to "Login", new_user_session_path, :class => 'navbar-link' %>
+		<% end %>
+		</p>
+
+		<% if notice %>
+			<p class="alert alert-sucess"><%= notice %></p>
+		<% end %>
+		<% if alert %>
+			<p class="alert alert-danger"><%= alert %></p>
+		<% end %>
+
+		<%= yield %>
+
+	</body>
 </html>
