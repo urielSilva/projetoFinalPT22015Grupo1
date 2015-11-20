@@ -1,23 +1,24 @@
-.KnowledgeLevels
-	h1 Listing Knowledges
-	- if @knowledges.size == 0
-			p There are no knowledges
-	- else
-		table cellspacing="0" cellpadding="10"
-			thead
+h1 Conhecimentos
+- if @knowledges.size == 0
+		p There are no knowledges
+- else
+	table cellspacing="0" cellpadding="10"
+		thead
+			tr
+				th Descrição
+				th Nível de Conhecimento
+				th Tecnologia
+				th
+				th
+
+		tbody
+			- @knowledges.each do |knowledge|
 				tr
-					th Description
-					th Knowledge Level
-					th
-					th
+					td = link_to knowledge.description, edit_knowledge_path(knowledge)
+					td = knowledge.knowledge_level.level
+					td = knowledge.technology.name
+					td = link_to 'Mostrar', knowledge
+					td = link_to 'Destruir', knowledge, data: {:confirm => 'Tem certeza?'}, :method => :delete
 
-			tbody
-				- @knowledges.each do |knowledge|
-					tr
-						td = link_to knowledge.description, edit_knowledge_path(knowledge)
-						td = knowledge.knowledge_level.level
-						td = link_to 'Show', knowledge
-						td = link_to 'Destroy', knowledge, data: {:confirm => 'Are you sure?'}, :method => :delete
-
-	br
-		= link_to 'New Knowledge', new_knowledge_path
+br
+	= link_to 'Criar novo Conhecimento', new_knowledge_path, :class => "waves-effect green btn-large"

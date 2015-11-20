@@ -5,7 +5,7 @@ class TechnologiesController < ApplicationController
 	# GET /jobs.json
 
 	def index
-		@technologies = Technology.all
+		@technologies = Technology.includes(:knowledges).all
 	end
 
 	# GET /jobs/1
@@ -43,7 +43,7 @@ class TechnologiesController < ApplicationController
 	# PATCH/PUT /jobs/1.json
 	def update
 		respond_to do |format|
-			if @technology.update(job_params)
+			if @technology.update(technology_params)
 				format.html {redirect_to @technology, notice: 'Tecnologia atualizada com sucesso.' }
 				format.json { render :show, status: :ok, location: @technology }
 			else
@@ -71,6 +71,6 @@ class TechnologiesController < ApplicationController
 
 		# Never trust parameters from the scary internet, only allow the white list through.
 		def technology_params
-			params.require(:technology).permit(:technology_name)
+			params.require(:technology).permit(:name, :description)
 		end
 end
