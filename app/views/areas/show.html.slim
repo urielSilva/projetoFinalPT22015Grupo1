@@ -1,0 +1,15 @@
+p#notice = notice
+
+p
+	strong Name:
+	= @area.name
+p
+	strong Sector:
+	= @area.sector.name
+//p
+	//strong Sector_id:
+	//= @area.sector_id
+
+= link_to 'Edit', edit_area_path(@area)
+'|
+= link_to 'Back', areas_path		

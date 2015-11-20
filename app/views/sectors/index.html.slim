@@ -1,25 +1,27 @@
-h1 Listing sectors
+#nucleos
+  h1 Nucleos
+  -if @sectors.size == 0
+    p Nenhum elemento na lista
+  -else
+    table
+      thead
+        tr
+          th Sigla
+          th Nome
+          th Descricao
+          th
+          th
+          th
 
-table
-  thead
-    tr
-      th Short name
-      th Name
-      th Description
-      th
-      th
-      th
+      tbody
+        - @sectors.each do |sector|
+          tr
+            td = link_to sector.short_name, edit_sector_path(sector)
+            td = link_to sector.name, edit_sector_path(sector)
+            td = link_to sector.description, edit_sector_path(sector)
+            td = link_to 'Show', sector
+            td = link_to 'Destroy', sector, data: {:confirm => 'Are you sure?'}, :method => :delete
 
-  tbody
-    - @sectors.each do |sector|
-      tr
-        td = sector.short_name
-        td = sector.name
-        td = sector.description
-        td = link_to 'Show', sector
-        td = link_to 'Edit', edit_sector_path(sector)
-        td = link_to 'Destroy', sector, data: {:confirm => 'Are you sure?'}, :method => :delete
-
-br
-
-= link_to 'New Sector', new_sector_path
+    br
+#newSector
+  = link_to 'New Sector', new_sector_path

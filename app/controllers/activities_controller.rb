@@ -10,6 +10,7 @@ class ActivitiesController < ApplicationController
 
   def new
     @activity = Activity.new
+    @activity_types = ActivityType.all
   end
 
   def edit
@@ -56,6 +57,6 @@ class ActivitiesController < ApplicationController
     end
 
     def activity_params
-      params.require(:activity).permit(:description)
+      params.require(:activity).permit(:description, :credit)
     end
   end
