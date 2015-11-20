@@ -11,8 +11,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
 ActiveRecord::Schema.define(version: 20151109154419) do
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -80,9 +80,6 @@ ActiveRecord::Schema.define(version: 20151109154419) do
     t.datetime "updated_at",  null: false
   end
 
-
-  add_foreign_key "areas", "sectors"
-
   create_table "technologies", force: :cascade do |t|
     t.string   "name"
     t.string   "description"
@@ -113,9 +110,9 @@ ActiveRecord::Schema.define(version: 20151109154419) do
   add_index "users", ["role_id"], name: "index_users_on_role_id", using: :btree
 
   add_foreign_key "activities", "activity_types"
+  add_foreign_key "areas", "sectors"
   add_foreign_key "knowledge_levels", "knowledges"
   add_foreign_key "knowledges", "knowledge_levels"
   add_foreign_key "users", "jobs"
   add_foreign_key "users", "roles"
-
 end
