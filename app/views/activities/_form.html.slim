@@ -12,4 +12,9 @@
   .field
     = f.label :credit
     = f.text_field :credit
-    .actions = f.submit
+  .field
+    = f.label :activity_type
+    = f.select :activity_type_id, ActivityType.all.map{|a| [a.description,a.id]}
+    javascript:
+      $('select').material_select()
+  .actions = f.submit
