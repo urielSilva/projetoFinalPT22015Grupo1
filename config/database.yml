@@ -24,7 +24,10 @@ default: &default
   user: bruno
   password: systemofadown661
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> feature/brunohelder
 development:
   <<: *default
   database: SAP_development
