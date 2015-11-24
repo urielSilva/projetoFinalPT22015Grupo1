@@ -2,7 +2,7 @@ class KnowledgesController < ApplicationController
 	before_action :set_knowledge, only: [:show, :edit, :update, :destroy]
 
 	def index
-		@knowledges = Knowledge.includes(:knowledge_level).all
+		@knowledges = Knowledge.includes(:knowledge_level, :technology).all
 	end
 
 	def show		
@@ -11,6 +11,7 @@ class KnowledgesController < ApplicationController
 	def new
 		@knowledge = Knowledge.new
 		@knowledge_levels = KnowledgeLevel.all
+		@technologies = Technology.all
 	end
 
 	def edit		
@@ -56,6 +57,6 @@ class KnowledgesController < ApplicationController
 		end
 
 		def knowledge_params
-			params.require(:knowledge).permit(:description, :knowledge_level_id)
+			params.require(:knowledge).permit(:description, :knowledge_level_id, :technology_id)
 		end
 end
