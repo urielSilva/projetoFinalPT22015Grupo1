@@ -17,5 +17,4 @@
     = f.select :activity_type_id, ActivityType.all.map{|a| [a.description,a.id]}
     javascript:
       $('select').material_select()
-
   .actions = f.submit

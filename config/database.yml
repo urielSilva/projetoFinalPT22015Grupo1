@@ -23,7 +23,6 @@ default: &default
   host: localhost
   user: wladi
   password: æßðđ/?€®
-
 development:
   <<: *default
   database: SAP_development

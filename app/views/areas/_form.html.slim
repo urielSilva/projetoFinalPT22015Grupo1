@@ -5,12 +5,12 @@
       ul
         - @area.errors.full_messages.each do |message|
           li = message
-  div align="center"
-    .field
-      = f.label :name
-      = f.text_field :name
-    .field
-      = f.label :sector
-      =collection_select(:area, :sector_id, Sector.all,:id,:name, prompt: true)
-     
-    .actions = f.submit 'Save'
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :sector
+    =collection_select(:area, :sector_id, Sector.all,:id,:name, prompt: true)
+  javascript:
+    $('select').material_select()
+  .actions = f.submit 'Save'
