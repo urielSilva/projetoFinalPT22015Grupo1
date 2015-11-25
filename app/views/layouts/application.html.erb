@@ -28,13 +28,20 @@
 -->
 
 		<nav class="blue">
-  			<li class="active">CJR</li>
+  			<ul>
+  				<li>CJR</li>
+			  	<li class="brand-logo right">
+			  		<a href="/pages/tela_admin"> MENU </a>
+			  	</li>
+			</ul>
+  				
+
 		</nav>
 
 		<p class="navbar-text pull-right">
 		<% if user_signed_in? %>
 			Logged in as <strong><%= current_user.email %></strong>.
-			<%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %>
+			<%= link_to 'Profile', edit_user_registration_path, :class => 'navbar-link' %>
 			<%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link' %>
 		<% else %>
 			<% link_to "Sign up", new_user_registration_path, :class => 'navbar-link' %>

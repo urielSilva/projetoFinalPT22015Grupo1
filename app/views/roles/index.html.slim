@@ -6,16 +6,14 @@ table
       th Nome
       th
       th
-      th
 
   tbody
     - @roles.each do |role|
       tr
-        td = role.Nome
+        td = link_to role.Nome, edit_role_path(role)
         td = link_to 'Mostrar', role
-        td = link_to 'Editar', edit_role_path(role)
         td = link_to 'Destruir', role, data: {:confirm => 'Are you sure?'}, :method => :delete
 
 br
 
-= link_to 'Novo cargo', new_role_path
+= link_to 'Novo cargo', new_role_path, :class => "waves-effect green btn-large"
