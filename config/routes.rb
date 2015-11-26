@@ -17,6 +17,7 @@ Rails.application.routes.draw do
 
 
   get 'atividades/:id' => 'activities#show'
+  post 'users/teste/:id' => 'users#create'
   root 'admins#index' 
 
 
