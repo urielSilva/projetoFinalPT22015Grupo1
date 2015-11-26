@@ -16,7 +16,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'materialize-sass'
 gem "cancan"
-
+gem 'high_voltage', '~> 2.4.0'
 
 
 group :development, :test do

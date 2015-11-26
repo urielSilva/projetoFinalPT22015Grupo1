@@ -2,7 +2,7 @@ class ActivitiesController < ApplicationController
   before_action :set_activity, only: [:show, :edit, :update, :destroy]
 
   def index
-    @activities =Activity.all
+    @activities =Activity.includes(:activity_type).all
   end
 
   def show
@@ -57,6 +57,6 @@ class ActivitiesController < ApplicationController
     end
 
     def activity_params
-      params.require(:activity).permit(:description, :credit)
+      params.require(:activity).permit(:description, :credit, :activity_type_id)
     end
   end

@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
 
   belongs_to :role
   belongs_to :job
+  belongs_to :area
   
   def admin?
   	#return self.role.name == 

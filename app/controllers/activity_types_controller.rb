@@ -4,7 +4,7 @@ class ActivityTypesController < ApplicationController
   # GET /activity_types
   # GET /activity_types.json
   def index
-    @activity_types = ActivityType.all
+    @activity_types = ActivityType.includes(:activities).all
   end
 
   # GET /activity_types/1
