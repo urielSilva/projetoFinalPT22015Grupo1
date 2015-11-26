@@ -1,0 +1,25 @@
+h1 Membros
+- if @users.size == 0
+		p Não há membros.
+
+- else
+
+	table
+		thead
+			tr
+				th Nome
+				th Cargo
+				th Area
+				th
+				th
+
+		tbody
+			- @users.each do |user|
+				tr
+					td = link_to user.name, edit_user_path(user)
+					td
+					td
+					td = link_to 'Mostrar', user
+					td = link_to 'Destruir', user, data: {:confirm =>  'Tem certeza?'}, :method => :delete	
+br
+	= link_to 'Novo membro', new_user_path, :class => "waves-effect green btn-large"
