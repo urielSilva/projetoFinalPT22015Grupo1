@@ -12,7 +12,7 @@ table
       tr
         td = link_to role.Nome, edit_role_path(role)
         td = link_to 'Mostrar', role
-        td = link_to 'Destruir', role, data: {:confirm => 'Are you sure?'}, :method => :delete
+        td#destoy = link_to image_tag('Delete-24'), role, data: {:confirm => 'Are you sure?'}, :method => :delete
 
 br
 

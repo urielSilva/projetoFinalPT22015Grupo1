@@ -19,7 +19,7 @@
             td = link_to area.name, edit_area_path(area)
             td = area.sector.name
             td = link_to 'Show', area
-            td = link_to 'Destroy', area, data: {:confirm => 'Are you sure?'}, :method => :delete
+            td#destoy = link_to image_tag('Delete-24'), area, data: {:confirm => 'Are you sure?'}, :method => :delete
 
     br
 #newArea

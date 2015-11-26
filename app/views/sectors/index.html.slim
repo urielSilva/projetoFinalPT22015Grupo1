@@ -20,7 +20,7 @@
             td = link_to sector.name, edit_sector_path(sector)
             td = link_to sector.description, edit_sector_path(sector)
             td = link_to 'Show', sector
-            td = link_to 'Destroy', sector, data: {:confirm => 'Are you sure?'}, :method => :delete
+            td#destoy = link_to image_tag('Delete-24'), sector, data: {:confirm => 'Are you sure?'}, :method => :delete
 
     br
 #newSector
