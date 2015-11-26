@@ -10,6 +10,6 @@ class User < ActiveRecord::Base
   belongs_to :profiles
   
   def admin?
-  	#return self.role.name == 
+  	return self.profile.name == "Admin" 
   end
 end

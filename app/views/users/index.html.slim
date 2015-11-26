@@ -8,6 +8,7 @@ h1 Membros
 		thead
 			tr
 				th Nome
+				th Perfil
 				th Cargo
 				th Area
 				th
@@ -17,6 +18,7 @@ h1 Membros
 			- @users.each do |user|
 				tr
 					td = link_to user.name, edit_user_path(user)
+					td
 					td
 					td
 					td = link_to 'Mostrar', user

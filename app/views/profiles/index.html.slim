@@ -1,0 +1,21 @@
+h1 Profiles
+- if @profiles.size == 0
+		p There are no profiles
+
+- else
+
+	table
+		thead
+			tr
+				th Nome do Profile
+				th
+				th
+
+		tbody
+			- @profiles.each do |profile|
+				tr
+					td = link_to profile.tipo, edit_profile_path(profile)
+					td = link_to 'Mostrar', profile
+					td.destoy = link_to image_tag('Delete-24'), profile, data: {:confirm =>  'Tem certeza?'}, :method => :delete	
+br
+	= link_to 'Criar novo Profile', new_profile_path, :class => "waves-effect green btn-large"

@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resources :jobs
   resources :technologies
   resources :areas
+  resources :profiles
   resources :activities
 
   get 'nucleos/:id' => 'sectors#show'
