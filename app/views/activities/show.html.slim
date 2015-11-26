@@ -8,6 +8,9 @@ p
   strong Créditos:
   = @activity.credit
 
+p
+  strong Tipo de atividade:
+  = @activity.activity_type.description
 
 = link_to 'Editar', edit_activity_path(@activity)
 
