@@ -17,6 +17,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'materialize-sass'
 gem "cancan"
 gem 'high_voltage', '~> 2.4.0'
+gem 'cancan', '~> 1.6', '>= 1.6.10'
 
 
 group :development, :test do
