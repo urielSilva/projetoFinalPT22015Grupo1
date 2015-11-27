@@ -29,7 +29,7 @@ h1 Projetos
         tr
           td = link_to job.job_name, edit_job_path(job)
           td = link_to 'Mostrar', job
-          td = link_to 'Destruir', job, data: {:confirm => 'Are you sure?'}, :method => :delete
+          td#destoy = link_to image_tag('Delete-24'), job, data: {:confirm => 'Are you sure?'}, :method => :delete
 br
 
 div
