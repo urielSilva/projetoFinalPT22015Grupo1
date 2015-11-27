@@ -7,6 +7,17 @@
           li = message
 
   .field
-    = f.label :name
-    = f.text_field :name
+    = f.label :description
+    = f.text_field :description
+  .field
+    = f.label :price
+    = f.text_field :price
+  .field
+    = f.label :link
+    = f.text_field :link
+  .field
+    = f.label :project_status
+    = f.select :project_status_id, ProjectStatus.all.map{|a| [a.status,a.id]}
+    javascript:
+      $('select').material_select()
   .actions = f.submit

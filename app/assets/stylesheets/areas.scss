@@ -1,0 +1,37 @@
+// Place all the styles related to the Areas controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+#areas {
+	h1{
+	font-size:30px;
+	color: #4AFF00;
+	text-align: center;
+	background: #002E63;
+	padding:15px;
+}
+td{
+	text-indent:50px;
+	line-height:40px;
+}
+th{
+	text-indent:50px;
+	text-align: center;
+	color:#002E63;
+}
+a{
+	color:#1B1B1B;
+	text-decoration:none;
+}
+a:hover{
+	color:#555D50;
+}
+a:active{
+	color:#1B1B1B;
+}
+
+}
+#newArea{
+	a{
+		color:black;
+	}
+} 

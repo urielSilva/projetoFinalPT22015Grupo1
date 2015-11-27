@@ -1,0 +1,23 @@
+h1 Tecnologias
+- if @technologies.size == 0
+		p There are no technologies
+
+- else
+
+	table
+		thead
+			tr
+				th Nome da tecnologia
+				th Descrição
+				th
+				th
+
+		tbody
+			- @technologies.each do |technology|
+				tr
+					td = link_to technology.name, edit_technology_path(technology)
+					td = technology.description
+					td = link_to 'Mostrar', technology
+					td = link_to 'Destruir', technology, data: {:confirm =>  'Tem certeza?'}, :method => :delete	
+br
+	= link_to 'Criar nova tecnologia', new_technology_path, :class => "waves-effect green btn-large"

@@ -4,7 +4,6 @@ class CreateProjects < ActiveRecord::Migration
       t.string :description
       t.float :price
       t.string :link
-      t.references :project_status, index: true, foreign_key: true
 
       t.timestamps null: false
     end

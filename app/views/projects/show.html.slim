@@ -2,7 +2,20 @@ p#notice = notice
 
 p
   strong Nome do Projeto:
-  = @project.name
+  = @project.description
+
+p
+  strong Preço:
+  = @project.price
+
+p
+  strong LInk:
+  = @project.link
+
+p
+  strong Status do projeto:
+  = @project.project_status.status
+
 
 = link_to 'Edit', edit_project_path(@project)
 '|

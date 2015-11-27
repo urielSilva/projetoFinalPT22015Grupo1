@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151120193827) do
+ActiveRecord::Schema.define(version: 20151127190323) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,6 +32,15 @@ ActiveRecord::Schema.define(version: 20151120193827) do
     t.datetime "updated_at",  null: false
   end
 
+  create_table "areas", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "sector_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "areas", ["sector_id"], name: "index_areas_on_sector_id", using: :btree
+
   create_table "jobs", force: :cascade do |t|
     t.string   "job_name"
     t.datetime "created_at", null: false
@@ -41,9 +50,23 @@ ActiveRecord::Schema.define(version: 20151120193827) do
   create_table "knowledge_levels", force: :cascade do |t|
     t.string   "description"
     t.string   "level"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.integer  "knowledge_id"
   end
+
+  add_index "knowledge_levels", ["knowledge_id"], name: "index_knowledge_levels_on_knowledge_id", using: :btree
+
+  create_table "knowledges", force: :cascade do |t|
+    t.string   "description"
+    t.integer  "knowledge_level_id"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.integer  "technology_id"
+  end
+
+  add_index "knowledges", ["knowledge_level_id"], name: "index_knowledges_on_knowledge_level_id", using: :btree
+  add_index "knowledges", ["technology_id"], name: "index_knowledges_on_technology_id", using: :btree
 
   create_table "project_statuses", force: :cascade do |t|
     t.string   "status"
@@ -55,10 +78,9 @@ ActiveRecord::Schema.define(version: 20151120193827) do
     t.string   "description"
     t.float    "price"
     t.string   "link"
-    t.integer  "project_status_id"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
-    t.string   "name"
+    t.integer  "project_status_id"
   end
 
   add_index "projects", ["project_status_id"], name: "index_projects_on_project_status_id", using: :btree
@@ -107,6 +129,10 @@ ActiveRecord::Schema.define(version: 20151120193827) do
   add_index "users", ["role_id"], name: "index_users_on_role_id", using: :btree
 
   add_foreign_key "activities", "activity_types"
+  add_foreign_key "areas", "sectors"
+  add_foreign_key "knowledge_levels", "knowledges"
+  add_foreign_key "knowledges", "knowledge_levels"
+  add_foreign_key "knowledges", "technologies"
   add_foreign_key "projects", "project_statuses"
   add_foreign_key "users", "jobs"
   add_foreign_key "users", "roles"

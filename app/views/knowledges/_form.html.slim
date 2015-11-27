@@ -1,0 +1,25 @@
+= form_for @knowledge do |f|
+	- if @knowledge.errors.any?
+		#error_explanation
+			h2 = "#{pluralize(@knowledge.errors.count, "error")} prohibited this knowledge from being saved:"
+			ul
+				- @knowledge.errors.full_messages.each do |message|
+					li = message
+
+	.field
+		= f.label :description
+		= f.text_field :description
+	
+	.field
+	 = f.label :knowledge_level
+	 = f.select :knowledge_level_id, KnowledgeLevel.all.map{|a| [a.level,a.id]}
+	javascript:
+ 		$('select').material_select()
+ 	
+ 	.field
+	 = f.label :technology
+	 = f.select :technology_id, Technology.all.map{|a| [a.name,a.id]}
+	javascript:
+ 		$('select').material_select()
+
+	.actions = f.submit

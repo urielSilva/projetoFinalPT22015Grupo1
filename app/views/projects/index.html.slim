@@ -1,10 +1,10 @@
 div.container
-  
+
   nav
     div.nav-wrapper
-      a.brand-logo href="#!" CJR(Logo) 
+      a.brand-logo href="#!" CJR(Logo)
 
-      ul#nav-mobile.right.hide-on-med-and-down 
+      ul#nav-mobile.right.hide-on-med-and-down
         li
           a href="#!" Reservado 1
         li
@@ -19,25 +19,30 @@ div.container
         hr
 
         - if @projects.size == 0
-          p nenhum registro encontrado
+          p Nenhum projeto encontrado
 
-        - else 
+        - else
           table.bordered.responsive-table
             thead
               tr
-                th Nome do Projeto
-                th
+                th Nome do projeto
+                th Preço
+                th Link
+                th Status do projeto
                 th
                 th
 
             tbody
               - @projects.each do |project|
                 tr
-                  td = link_to project.name, edit_project_path(project)
+                  td = link_to project.description, edit_project_path(project)
+                  td = project.price
+                  td = project.link
+                  td = project.project_status.status
                   td = link_to 'Show', project
                   td = link_to 'Destroy', project, data: {:confirm => 'Você tem certeza?'}, :method => :delete
       br
-      
+
       div
         = link_to 'Criar novo Projeto', new_project_path, :class => "waves-effect green btn-large"
 

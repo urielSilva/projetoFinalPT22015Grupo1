@@ -1,3 +1,5 @@
 class ProjectStatus < ActiveRecord::Base
-	has_many :projects
+  has_many :projects, dependent: :destroy
+  validates_presence_of :status
 end
+
