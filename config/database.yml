@@ -21,8 +21,9 @@ default: &default
   # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: 5
   host: localhost
-  user: wladi
-  password: æßðđ/?€®
+  user: bruno
+  password: systemofadown661
+
 development:
   <<: *default
   database: SAP_development
