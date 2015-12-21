@@ -7,7 +7,11 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
 
   belongs_to :role
-  belongs_to :job
+  has_many :areas
+  has_many :knowledges
+  has_many :activities
+  has_many :projects
+
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
