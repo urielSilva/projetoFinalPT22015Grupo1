@@ -6,7 +6,6 @@ Rails.application.routes.draw do
   resources :knowledges
   resources :activity_types
   resources :roles
-  resources :jobs
   resources :technologies
   resources :areas
   resources :activities
