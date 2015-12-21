@@ -16,7 +16,7 @@ h1 Níveis de Conhecimento
           td = link_to knowledge_level.level, edit_knowledge_level_path(knowledge_level)
           td = knowledge_level.description
           td = link_to 'Mostrar', knowledge_level
-          td = link_to 'Destruir', knowledge_level, data: {:confirm => 'Tem certeza?'}, :method => :delete
+          td#destoy = link_to image_tag('Delete-24'), knowledge_level, data: {:confirm => 'Tem certeza?'}, :method => :delete
 
 br
   = link_to 'Criar novo nível de conhecimento', new_knowledge_level_path(@knowledge_level), :class => "waves-effect green btn-large"

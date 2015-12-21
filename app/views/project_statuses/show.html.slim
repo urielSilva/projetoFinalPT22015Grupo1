@@ -1,0 +1,9 @@
+p#notice = notice
+
+p
+  strong Status:
+  = @project_status.status
+
+= link_to 'Edit', edit_project_status_path(@project_status)
+
+= link_to 'Back', project_statuses_path
