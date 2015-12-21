@@ -14,7 +14,19 @@
     = f.text_field :credit
   .field
     = f.label :activity_type
+<<<<<<< HEAD
+<<<<<<< HEAD
+    = f.select :activity_type_id
+    .actions = f.submit
+=======
+    = f.select :activity_type_id, ActivityType.all.map{|a| [a.description,a.id]}
+    javascript:
+      $('select').material_select()
+  .actions = f.submit
+>>>>>>> d6a9e32818a8ac64ad99093d43e0748768d010cd
+=======
     = f.select :activity_type_id, ActivityType.all.map{|a| [a.description,a.id]}
     javascript:
       $('select').material_select()
     .actions = f.submit
+>>>>>>> e345a3523d597843f48ead2faaa1f31d070d400f

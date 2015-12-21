@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   resources :project_statuses
   devise_for :users
+  resources :users
   resources :sectors
   resources :knowledge_levels
   resources :knowledges
@@ -9,6 +10,7 @@ Rails.application.routes.draw do
   resources :jobs
   resources :technologies
   resources :areas
+  resources :profiles
   resources :activities
   resources :projects
 
@@ -17,6 +19,7 @@ Rails.application.routes.draw do
   get 'nucleos/:id' => 'sectors#show'
   get 'atividades/:id' => 'activities#show'
   root 'admins#index'
+  post 'users/teste/:id' => 'users#create'
   get 'pages/tela_admin' => 'high_voltage/pages#show', id: 'tela_admin'
 
 
