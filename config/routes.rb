@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :project_statuses
   devise_for :users
   resources :sectors
   resources :knowledge_levels
@@ -6,16 +7,18 @@ Rails.application.routes.draw do
   resources :activity_types
   resources :roles
   resources :jobs
-
+  resources :technologies
   resources :areas
+  resources :activities
+  resources :projects
+
+
 
   get 'nucleos/:id' => 'sectors#show'
-
-  resources :technologies
-  resources :activities
-
-
   get 'atividades/:id' => 'activities#show'
+  root 'admins#index'
+  get 'pages/tela_admin' => 'high_voltage/pages#show', id: 'tela_admin'
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

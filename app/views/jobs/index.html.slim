@@ -1,46 +1,39 @@
-div.container
-  
-  nav
-    div.nav-wrapper.hoverable
-      a.brand-logo href="#!" 
-        = image_tag("cjr.png", height: '60')
+/  nav
+/    div.nav-wrapper.hoverable
+/      a.brand-logo href="#!" 
+/        = image_tag("cjr.png", height: '60')
+/
+/      ul#nav-mobile.right.hide-on-med-and-down 
+/        li
+/          a href="#!" Reservado 1
+/        li
+/          a href="#!" Reservado 2
+/        li
+/          a href="#!" Reservado 3
 
-      ul#nav-mobile.right.hide-on-med-and-down 
-        li
-          a href="#!" Reservado 1
-        li
-          a href="#!" Reservado 2
-        li
-          a href="#!" Reservado 3
+h1 Projetos
+- if @jobs.size == 0
+  p nenhum registro encontrado
 
-  div.row
-    div.s12
-      div
-        h1 Cargos
-        hr
+- else 
+  table.bordered.responsive-table
+    thead
+      tr
+        th Nome do Projeto
+        th
+        th
+        th
 
-        - if @jobs.size == 0
-          p nenhum registro encontrado
+    tbody
+      - @jobs.each do |job|
+        tr
+          td = link_to job.job_name, edit_job_path(job)
+          td = link_to 'Mostrar', job
+          td#destoy = link_to image_tag('Delete-24'), job, data: {:confirm => 'Are you sure?'}, :method => :delete
+br
 
-        - else 
-          table.bordered.responsive-table
-            thead
-              tr
-                th Nome do Cargo
-                th
-                th
-                th
-
-            tbody
-              - @jobs.each do |job|
-                tr
-                  td = link_to job.job_name, edit_job_path(job)
-                  td = link_to 'Show', job
-                  td = link_to 'Destroy', job, data: {:confirm => 'Are you sure?'}, :method => :delete
-      br
-      
-      div
-        = link_to 'Criar novo cargo', new_job_path, :class => "waves-effect green btn-large"
+div
+  = link_to 'Criar novo projeto', new_job_path, :class => "waves-effect green btn-large"
 
   /footer.page-footer
    / div.container
