@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151126133404) do
+ActiveRecord::Schema.define(version: 20151127190323) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -68,11 +68,29 @@ ActiveRecord::Schema.define(version: 20151126133404) do
   add_index "knowledges", ["knowledge_level_id"], name: "index_knowledges_on_knowledge_level_id", using: :btree
   add_index "knowledges", ["technology_id"], name: "index_knowledges_on_technology_id", using: :btree
 
+
   create_table "profiles", force: :cascade do |t|
     t.string   "tipo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "project_statuses", force: :cascade do |t|
+    t.string   "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "projects", force: :cascade do |t|
+    t.string   "description"
+    t.float    "price"
+    t.string   "link"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.integer  "project_status_id"
+  end
+
+  add_index "projects", ["project_status_id"], name: "index_projects_on_project_status_id", using: :btree
 
   create_table "roles", force: :cascade do |t|
     t.string   "Nome"
@@ -125,6 +143,7 @@ ActiveRecord::Schema.define(version: 20151126133404) do
   add_foreign_key "knowledge_levels", "knowledges"
   add_foreign_key "knowledges", "knowledge_levels"
   add_foreign_key "knowledges", "technologies"
+  add_foreign_key "projects", "project_statuses"
   add_foreign_key "users", "jobs"
   add_foreign_key "users", "profiles"
   add_foreign_key "users", "roles"

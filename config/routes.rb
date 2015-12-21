@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :project_statuses
   devise_for :users
   resources :users#, controller: users <- Sugestão do Rafael
   resources :sectors
@@ -11,6 +12,9 @@ Rails.application.routes.draw do
   resources :areas
   resources :profiles
   resources :activities
+  resources :projects
+
+
 
   get 'nucleos/:id' => 'sectors#show'
   get 'atividades/:id' => 'activities#show'
