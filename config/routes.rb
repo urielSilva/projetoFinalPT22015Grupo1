@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :users
+  resources :users#, controller: users <- Sugestão do Rafael
   resources :sectors
   resources :knowledge_levels
   resources :knowledges
