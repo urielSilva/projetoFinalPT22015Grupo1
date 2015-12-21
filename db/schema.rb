@@ -68,18 +68,18 @@ ActiveRecord::Schema.define(version: 20151127190323) do
   add_index "knowledges", ["knowledge_level_id"], name: "index_knowledges_on_knowledge_level_id", using: :btree
   add_index "knowledges", ["technology_id"], name: "index_knowledges_on_technology_id", using: :btree
 
-<<<<<<< HEAD
-  create_table "project_statuses", force: :cascade do |t|
-    t.string   "status"
-=======
   create_table "profiles", force: :cascade do |t|
     t.string   "tipo"
->>>>>>> feature/marcus
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-<<<<<<< HEAD
+  create_table "project_statuses", force: :cascade do |t|
+    t.string   "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "projects", force: :cascade do |t|
     t.string   "description"
     t.float    "price"
@@ -91,8 +91,6 @@ ActiveRecord::Schema.define(version: 20151127190323) do
 
   add_index "projects", ["project_status_id"], name: "index_projects_on_project_status_id", using: :btree
 
-=======
->>>>>>> feature/marcus
   create_table "roles", force: :cascade do |t|
     t.string   "Nome"
     t.datetime "created_at", null: false
