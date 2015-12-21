@@ -20,8 +20,8 @@ p#notice = notice
         tr
           td = link_to activity_type.description, edit_activity_type_path(activity_type)
           td = link_to 'Mostrar', activity_type
-          td = link_to 'Destruir', activity_type, data: {:confirm => 'Tem certeza?'}, :method => :delete
+          td#destoy = link_to image_tag('Delete-24'), activity_type, data: {:confirm => 'Tem certeza?'}, :method => :delete
 
   br
 
-  = link_to 'Novo tipo de atividade', new_activity_type_path
+  = link_to 'Novo tipo de atividade', new_activity_type_path, :class => "waves-effect green btn-large"
