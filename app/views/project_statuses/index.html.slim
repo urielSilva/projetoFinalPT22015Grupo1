@@ -1,0 +1,21 @@
+p#notice = notice
+
+h1 Status do Projeto
+
+table
+  thead
+    tr
+      th Status
+      th
+      th
+
+  tbody
+    - @project_statuses.each do |project_status|
+      tr
+        td = link_to project_status.status, edit_project_status_path(project_status)
+        td = link_to 'Show', project_status
+        td = link_to 'Destroy', project_status, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Project status', new_project_status_path

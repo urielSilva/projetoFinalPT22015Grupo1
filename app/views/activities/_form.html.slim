@@ -1,7 +1,7 @@
 = form_for @activity do |f|
   - if @activity.errors.any?
     #error_explanation
-      h4 = "#{pluralize(@activity.errors.count, "erro")} impediu essa atividade de ser salva:"
+      h4 = "#{pluralize(@activity.errors.count, "error")} prohibited this job from being saved:"
       ul
         - @activity.errors.full_messages.each do |message|
           li = message
@@ -17,4 +17,4 @@
     = f.select :activity_type_id, ActivityType.all.map{|a| [a.description,a.id]}
     javascript:
       $('select').material_select()
-  .actions = f.submit
+    .actions = f.submit

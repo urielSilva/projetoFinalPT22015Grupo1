@@ -18,7 +18,7 @@ h1 Conhecimentos
 					td = knowledge.knowledge_level.level
 					td = knowledge.technology.name
 					td = link_to 'Mostrar', knowledge
-					td = link_to 'Destruir', knowledge, data: {:confirm => 'Tem certeza?'}, :method => :delete
+					td.destoy = link_to image_tag('Delete-24'), knowledge, data: {:confirm => 'Tem certeza?'}, :method => :delete
 
 br
 	= link_to 'Criar novo Conhecimento', new_knowledge_path, :class => "waves-effect green btn-large"

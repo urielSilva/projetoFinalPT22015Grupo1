@@ -22,7 +22,7 @@ p#notice = notice
           td = activity.credit
           td = activity.activity_type.description
           td = link_to 'Mostrar', activity
-          td = link_to 'Destruir', activity, data: {:confirm => 'Tem certeza?' }, :method => :delete
+          td#destoy = link_to image_tag('Delete-24'), activity, data: {:confirm => 'Tem certeza?' }, :method => :delete
   br
 
-  = link_to 'Nova atividade', new_activity_path
+  = link_to 'Nova atividade', new_activity_path, :class => "waves-effect green btn-large"

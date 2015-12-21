@@ -1,0 +1,23 @@
+= form_for @project do |f|
+  - if @project.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@project.errors.count, "error")} prohibited this job from being saved:"
+      ul
+        - @project.errors.full_messages.each do |message|
+          li = message
+
+  .field
+    = f.label :description
+    = f.text_field :description
+  .field
+    = f.label :price
+    = f.text_field :price
+  .field
+    = f.label :link
+    = f.text_field :link
+  .field
+    = f.label :project_status
+    = f.select :project_status_id, ProjectStatus.all.map{|a| [a.status,a.id]}
+    javascript:
+      $('select').material_select()
+  .actions = f.submit
